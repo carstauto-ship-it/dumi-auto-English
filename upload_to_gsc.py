@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 DUMI AUTO - Google Search Console URL Submission Script
-https://dumi-panel.com
+https://dumi-auto.com
 
 用法:
 1. 手动模式: 打开 GSC -> URL Inspection -> 输入每个产品页URL
@@ -9,13 +9,13 @@ https://dumi-panel.com
 
 手动提交说明:
 1. 访问 https://search.google.com/search-console
-2. 选择 dumi-panel.com 属性
+2. 选择 dumi-auto.com 属性
 3. 点击 "URL Inspection" 
 4. 输入以下任意URL并点击"请求编入索引":
 """
 
-SITE_URL = "https://dumi-panel.com"
-SITEMAP_URL = "https://dumi-panel.com/sitemap.xml"
+SITE_URL = "https://dumi-auto.com"
+SITEMAP_URL = "https://dumi-auto.com/sitemap.xml"
 
 PRODUCT_URLS = [
     f"{SITE_URL}/products/gloss-black-ppf.html",
@@ -38,7 +38,7 @@ if __name__ == "__main__":
     print(f"\n✅ 共 {len(PRODUCT_URLS)} 个产品页需要提交到 GSC")
     print("\n📝 操作步骤:")
     print("  1. 登录 Google Search Console: https://search.google.com/search-console")
-    print("  2. 选择 dumi-panel.com 属性")
+    print("  2. 选择 dumi-auto.com 属性")
     print("  3. 点击 'Sitemaps' -> 提交: sitemap.xml")
     print("  4. 点击 'URL Inspection' -> 逐个提交产品页URL")
     print("  5. 或使用 GSC API (需配置 OAuth2) 完成自动化提交")

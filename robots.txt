@@ -1,7 +1,7 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://dumi-panel.com/sitemap.xml
+Sitemap: https://dumi-auto.com/sitemap.xml
 
 # Block common bot crawlers from sensitive paths
 Disallow: /cgi-bin/
