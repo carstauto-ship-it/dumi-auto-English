@@ -17,28 +17,40 @@ https://dumi-auto.com
 SITE_URL = "https://dumi-auto.com"
 SITEMAP_URL = "https://dumi-auto.com/sitemap.xml"
 
-PRODUCT_URLS = [
-    f"{SITE_URL}/products/gloss-black-ppf.html",
-    f"{SITE_URL}/products/metallic-ppf.html",
-    f"{SITE_URL}/products/satin-matte-ppf.html",
-    f"{SITE_URL}/products/crystalline-ppf.html",
-    f"{SITE_URL}/products/graphene-coating.html",
-    f"{SITE_URL}/products/security-film.html",
-    f"{SITE_URL}/products/carbon-tint.html",
-    f"{SITE_URL}/products/uv-protection-film.html",
+# All product URLs (sitemap has been updated)
+NEW_PRODUCT_URLS = [
+    # New PPF Products
+    f"{SITE_URL}/products/chrome-mirror-ppf.html",
+    f"{SITE_URL}/products/diamond-guard-ppf.html",
+    f"{SITE_URL}/products/nano-ceramic-ppf.html",
+    f"{SITE_URL}/products/infrared-ceramic-ppf.html",
+    f"{SITE_URL}/products/camouflage-ppf.html",
+    # New Window Films
+    f"{SITE_URL}/products/ceramic-pro-window-film.html",
+    f"{SITE_URL}/products/ceramic-ir-window-film.html",
+    f"{SITE_URL}/products/dyed-window-film.html",
+    f"{SITE_URL}/products/hybrid-window-film.html",
+    f"{SITE_URL}/products/metalized-window-film.html",
+    f"{SITE_URL}/products/limo-black-film.html",
+    # New Accessories
+    f"{SITE_URL}/products/ppf-installation-kit.html",
+    f"{SITE_URL}/products/hydrophobic-topcoat.html",
+    f"{SITE_URL}/products/ppf-edge-sealer.html",
 ]
 
 if __name__ == "__main__":
     print("DUMI AUTO - Google Search Console Submission")
     print("=" * 50)
-    print(f"\n📋 Sitemap: {SITEMAP_URL}\n")
-    print("🔍 产品页面URL列表:\n")
-    for i, url in enumerate(PRODUCT_URLS, 1):
-        print(f"  {i}. {url}")
-    print(f"\n✅ 共 {len(PRODUCT_URLS)} 个产品页需要提交到 GSC")
+    print(f"\n📋 Sitemap: {SITEMAP_URL}")
+    print("   ✅ Sitemap 已更新 - Google 会自动在下次抓取时发现新页面\n")
+    print("🔍 13个新产品页URL (已添加到sitemap):\n")
+    for i, url in enumerate(NEW_PRODUCT_URLS, 1):
+        print(f"  {i:2d}. {url}")
+    print(f"\n✅ 共 {len(NEW_PRODUCT_URLS)} 个新产品页需要提交到 GSC")
     print("\n📝 操作步骤:")
     print("  1. 登录 Google Search Console: https://search.google.com/search-console")
     print("  2. 选择 dumi-auto.com 属性")
-    print("  3. 点击 'Sitemaps' -> 提交: sitemap.xml")
-    print("  4. 点击 'URL Inspection' -> 逐个提交产品页URL")
+    print("  3. 点击 'Sitemaps' -> 确认 sitemap.xml 已提交")
+    print("  4. 点击 'URL Inspection' -> 逐个提交上述URL -> '请求编入索引'")
     print("  5. 或使用 GSC API (需配置 OAuth2) 完成自动化提交")
+    print("\n💡 提示: Sitemap 已更新，Google 通常在24-48小时内自动发现新页面")
