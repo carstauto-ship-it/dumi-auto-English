@@ -263,6 +263,11 @@ a {
 }
 
 /* Products Preview */
+/* Products Section */
+.products-section {
+    padding: 80px 0;
+}
+
 .products-preview {
     padding: 80px 0;
 }
