@@ -17,25 +17,23 @@ https://dumi-auto.com
 SITE_URL = "https://dumi-auto.com"
 SITEMAP_URL = "https://dumi-auto.com/sitemap.xml"
 
-# All product URLs (sitemap has been updated)
+# All product URLs (sitemap has been updated with 15 new products - 2026-04-27)
 NEW_PRODUCT_URLS = [
-    # New PPF Products
-    f"{SITE_URL}/products/chrome-mirror-ppf.html",
-    f"{SITE_URL}/products/diamond-guard-ppf.html",
-    f"{SITE_URL}/products/nano-ceramic-ppf.html",
-    f"{SITE_URL}/products/infrared-ceramic-ppf.html",
-    f"{SITE_URL}/products/camouflage-ppf.html",
-    # New Window Films
-    f"{SITE_URL}/products/ceramic-pro-window-film.html",
-    f"{SITE_URL}/products/ceramic-ir-window-film.html",
-    f"{SITE_URL}/products/dyed-window-film.html",
-    f"{SITE_URL}/products/hybrid-window-film.html",
-    f"{SITE_URL}/products/metalized-window-film.html",
-    f"{SITE_URL}/products/limo-black-film.html",
-    # New Accessories
-    f"{SITE_URL}/products/ppf-installation-kit.html",
-    f"{SITE_URL}/products/hydrophobic-topcoat.html",
-    f"{SITE_URL}/products/ppf-edge-sealer.html",
+    f"{SITE_URL}/products/stealth-pro-ppf.html",
+    f"{SITE_URL}/products/ceramic-pro-coating.html",
+    f"{SITE_URL}/products/tpu-color-wrap.html",
+    f"{SITE_URL}/products/nano-ceramic-tint.html",
+    f"{SITE_URL}/products/xpel-ultimate-plus-plus.html",
+    f"{SITE_URL}/products/auto-ceramic-coating-spray.html",
+    f"{SITE_URL}/products/privacy-ceramic-tint.html",
+    f"{SITE_URL}/products/clear-matte-hybrid-ppf.html",
+    f"{SITE_URL}/products/infrared-heat-blocking-tint.html",
+    f"{SITE_URL}/products/automotive-glass-coating.html",
+    f"{SITE_URL}/products/exterior-matte-film.html",
+    f"{SITE_URL}/products/headlight-ceramic-coating.html",
+    f"{SITE_URL}/products/commercial-vehicle-ppf.html",
+    f"{SITE_URL}/products/solar-control-tint.html",
+    f"{SITE_URL}/products/paint-restoration-coating.html",
 ]
 
 if __name__ == "__main__":
@@ -43,7 +41,7 @@ if __name__ == "__main__":
     print("=" * 50)
     print(f"\n📋 Sitemap: {SITEMAP_URL}")
     print("   ✅ Sitemap 已更新 - Google 会自动在下次抓取时发现新页面\n")
-    print("🔍 13个新产品页URL (已添加到sitemap):\n")
+    print("🔍 15个新产品页URL (已添加到sitemap - 2026-04-27):\n")
     for i, url in enumerate(NEW_PRODUCT_URLS, 1):
         print(f"  {i:2d}. {url}")
     print(f"\n✅ 共 {len(NEW_PRODUCT_URLS)} 个新产品页需要提交到 GSC")
