@@ -17,7 +17,7 @@ https://dumi-auto.com
 SITE_URL = "https://dumi-auto.com"
 SITEMAP_URL = "https://dumi-auto.com/sitemap.xml"
 
-# All product URLs (sitemap has been updated with 15 new products - 2026-04-27)
+# All product URLs (sitemap has been updated with 15 new products - 2026-04-28)
 NEW_PRODUCT_URLS = [
     f"{SITE_URL}/products/stealth-pro-ppf.html",
     f"{SITE_URL}/products/ceramic-pro-coating.html",
