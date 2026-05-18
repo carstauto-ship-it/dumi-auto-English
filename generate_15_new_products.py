@@ -2,7 +2,7 @@
 """Generate 15 new SEO-optimized product pages for dumi-auto.com"""
 import os
 
-BASE_DIR = "/Users/carstauto/.openclaw/workspace/dumi-auto-website/products"
+BASE_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "products")
 
 NEW_PRODUCTS = [
     {
