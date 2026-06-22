@@ -3,7 +3,7 @@
 import os
 import json
 
-BASE_DIR = "/Users/carstauto/.openclaw/workspace/dumi-auto-website/products"
+BASE_DIR = "/tmp/dumi-publish-dumi-auto/products"
 CSS_LINK = "../css/style.css"
 
 PRODUCTS = [
