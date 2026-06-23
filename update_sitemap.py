@@ -1,52 +1,36 @@
 #!/usr/bin/env python3
-"""Update sitemap.xml with all current product pages"""
+"""Update /tmp/dumi-publish-dumi-auto/sitemap.xml with all current product pages"""
 import os
 from datetime import datetime
 
-BASE_DIR = "/Users/carstauto/.openclaw/workspace/dumi-auto-website/products"
-SITEMAP = "/Users/carstauto/.openclaw/workspace/dumi-auto-website/sitemap.xml"
+BASE_DIR = "/tmp/dumi-publish-dumi-auto/products"
+SITEMAP = "/tmp/dumi-publish-dumi-auto/sitemap.xml"
 TODAY = datetime.now().strftime("%Y-%m-%d")
 
-# Get all product HTML files
-products = sorted([f for f in os.listdir(BASE_DIR) if f.endswith(".html") and f != "index.html"])
+products = sorted([f for f in os.listdir(BASE_DIR) if f.endswith(".html")])
 print(f"Found {len(products)} product pages")
 
-# Build sitemap
 lines = ['<?xml version="1.0" encoding="UTF-8"?>']
-lines.append('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"')
-lines.append('        xmlns:xhtml="http://www.w3.org/1999/xhtml">')
+lines.append('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">')
 
-# Home pages
-lines.append('  <url>')
-lines.append('    <loc>https://dumi-auto.com/</loc>')
-lines.append('    <xhtml:link rel="alternate" hreflang="en" href="https://dumi-auto.com/"/>')
-lines.append('    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://dumi-auto.com/index-cn.html"/>')
-lines.append(f'    <lastmod>{TODAY}</lastmod>')
-lines.append('    <changefreq>weekly</changefreq>')
-lines.append('    <priority>1.0</priority>')
-lines.append('  </url>')
-
-lines.append('  <url>')
-lines.append('    <loc>https://dumi-auto.com/index-cn.html</loc>')
-lines.append('    <xhtml:link rel="alternate" hreflang="en" href="https://dumi-auto.com/"/>')
-lines.append('    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://dumi-auto.com/index-cn.html"/>')
-lines.append(f'    <lastmod>{TODAY}</lastmod>')
-lines.append('    <changefreq>weekly</changefreq>')
-lines.append('    <priority>0.9</priority>')
-lines.append('  </url>')
+# Home
+for path, prio in [("https://dumi-auto.com/", "1.0"), ("https://dumi-auto.com/products.html", "0.9"),
+                    ("https://dumi-auto.com/index-cn.html", "0.9"), ("https://dumi-auto.com/privacy.html", "0.3"),
+                    ("https://dumi-auto.com/terms.html", "0.3")]:
+    lines.append('  <url>')
+    lines.append(f'    <loc>{path}</loc>')
+    lines.append(f'    <lastmod>{TODAY}</lastmod>')
+    lines.append('    <changefreq>weekly</changefreq>')
+    lines.append(f'    <priority>{prio}</priority>')
+    lines.append('  </url>')
 
 # Products
 for product in products:
     slug = product.replace(".html", "")
-    if slug in ["ultimate-plus", "stealth-ppf", "color-ppf"]:
+    if "tint" in slug or "ceramic" in slug or "coating" in slug:
         priority = "0.9"
-    elif "window" in slug or "tint" in slug or "ceramic" in slug or "coating" in slug:
-        priority = "0.9"
-    elif "index" in slug:
-        priority = "0.5"
     else:
         priority = "0.8"
-    
     lines.append('  <url>')
     lines.append(f'    <loc>https://dumi-auto.com/products/{product}</loc>')
     lines.append(f'    <lastmod>{TODAY}</lastmod>')
@@ -56,10 +40,6 @@ for product in products:
 
 lines.append('</urlset>')
 
-xml = "\n".join(lines) + "\n"
-
-with open(SITEMAP, "w") as f:
-    f.write(xml)
-
-print(f"Sitemap updated: {len(products)} products + 2 home pages")
-print(f"Date: {TODAY}")
+with open(SITEMAP, "w", encoding="utf-8") as f:
+    f.write("\n".join(lines))
+print(f"✅ sitemap.xml updated: {len(products)} products + 5 pages = {len(products)+5} URLs")
